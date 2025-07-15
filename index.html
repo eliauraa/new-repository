@@ -2,19 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f8ff;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0f5ad3;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
-  <h1>Live happly</h1>
+<body>
+  <h1>Live happily</h1>
   
   <p>
-    Visit <a href="https://www.google.com" target="_blank" style="color: blue; text-decoration: underline;">Google</a>
+    Visit 
+    <a href="https://www.google.com" target="_blank">
+      Google
+    </a>
   </p>
   
   <img 
     src="https://media.giphy.com/media/xUOxfjsWly1N8r5N0g/giphy.gif" 
-    alt="happy face emoji" 
-    style="width: 300px; height: auto; margin-top: 20px;"
+    alt="Sunny day gif"
   />
-</body>
-</html>
+
+  <!-- Signup form -->
+  <form id="signup-form">
+    <h2>Sign Up</h2>
+    <input type="email" id="email" placeholder="Email" required /><br />
+    <input type="password" id="password" placeholder="Password" required /><br />
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_I
